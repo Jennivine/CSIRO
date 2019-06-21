@@ -1,0 +1,25 @@
+sdk-version: 0.13.5
+
+name: CSIRO
+
+version: 1.0.0
+
+source: C:\Users\jche176171\CSIRO\day-4-and-5\Main.daml
+
+scenario: Main:setup
+
+parties:
+  - Andrew
+  - Brandon
+  - Clive
+  - David
+  - Eugenie
+  - Francis
+  - Genevieve
+
+exposed-modules:
+  - Main
+
+dependencies:
+  - daml-prim
+  - daml-stdlib

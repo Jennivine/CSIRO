@@ -1,0 +1,50 @@
+daml 1.2
+module PaintOffer where
+
+import Iou
+
+-- House painting: two-party transaction
+
+template PaintOffer
+  with
+    houseOwner : Party
+    painter : Party
+    offerAmount : Decimal
+    currency : Text
+    
+  where 
+    signatory painter
+    observer houseOwner
+
+    ensure
+      offerAmount > 0.0
+
+    controller houseOwner can
+      AcceptOffer : ContractId MustPaint
+        with 
+          iouId : ContractId Iou
+          iouIssuer : Party
+        do
+          -- transfer IOU, excersise must pay
+          baseIou <- fetch iouId
+          assert(iouIssuer == baseIou.issuer)
+          assert(houseOwner == baseIou.owner)
+          assert(offerAmount <= baseIou.amount && currency == baseIou.currency)
+
+          offerTransfer <- exercise iouId Iou_Transfer with newOwner = painter
+          quoteIouCid <- exercise offerTransfer IouTransfer_Accept
+          success <- create MustPaint with owner = houseOwner; painter
+          return (success)
+
+      RejectOffer : ()
+        do return ()    
+
+template MustPaint
+  with
+    painter : Party
+    owner : Party
+  where
+    signatory owner, painter
+    agreement
+      show painter <> " must paint the house of " <>
+      show owner <> " after the IOU is transferred."

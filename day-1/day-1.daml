@@ -1,0 +1,56 @@
+-- Starting an experiment blockchain 
+
+daml 1.2
+module SimpleTest where
+
+type ChocId = ContractId Chocolate
+
+-- Transfer chocolate bars between two party
+template Chocolate
+  with 
+    issuer : Party
+    owner : Party
+    amount: Decimal
+
+  where
+    ensure amount > 0.0
+    
+    signatory owner, issuer
+
+    controller owner can
+
+      Share : (ChocId, ChocId)
+        with 
+          splitAmount: Decimal
+
+        do
+          splitCid <- create this with amount = splitAmount
+          restCid <- create this with amount = amount - splitAmount
+          return (splitCid, restCid)
+    
+      Transfer : ContractId ChocTransfer
+        with 
+          newOwner : Party
+        do create ChocTransfer with choc = this; newOwner
+          
+
+template ChocTransfer
+  with 
+    choc : Chocolate
+    newOwner : Party
+
+  where 
+    signatory choc.owner, choc.issuer
+
+    controller choc.owner can
+      Transfer_Cancel : ChocId
+        do create choc
+
+    controller newOwner can
+      Transfer_Accept : ChocId
+        do create choc
+
+      Transfer_Reject : ChocId
+        do 
+          create choc
+            with owner = newOwner

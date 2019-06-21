@@ -1,0 +1,151 @@
+daml 1.2
+module Outsource where
+
+-- House painting but now the painter can outsource its work.
+import Iou
+
+-- next step: allow trade between different currencies?
+convert : Decimal -> Text -> Text -> Decimal
+convert amount localCurrency offerCurrency = 
+  if (offerCurrency == "EUR" && localCurrency == "USD")
+    then
+      do amount * 0.89
+    else
+      do amount * 1.13      
+
+
+template PaintOffer
+  with
+    houseOwner : Party
+    painters : [Party]
+    threshold : Decimal
+    offerCurrency : Text
+    job : Text
+    
+  where 
+    signatory houseOwner
+    observer painters
+
+    ensure
+      threshold > 0.0
+
+    nonconsuming choice BidOffer : ContractId Bidding
+      with 
+        amount : Decimal
+        currency : Text
+        painter : Party
+        offerId : ContractId PaintOffer
+      
+      controller painter
+        do  
+          assert (painter `elem` painters && offerCurrency == currency)
+          assert (amount <= threshold)     
+
+          create Bidding with offerId; houseOwner; painter; amount; currency; job
+           
+
+template Bidding
+  with
+    offerId : ContractId PaintOffer
+    houseOwner : Party
+    painter : Party
+    amount: Decimal
+    currency : Text
+    job : Text
+
+  where 
+    signatory painter
+    ensure
+      amount > 0.0
+
+    controller houseOwner can
+      -- how to ensure houseOwner can only accept one offer?
+      AcceptOffer : ContractId MustPaint
+        with 
+          iouId : ContractId Iou
+        do
+          -- transfer IOU, excersise must pay
+          baseIou <- fetch iouId
+          assert(houseOwner == baseIou.owner && currency == baseIou.currency)
+
+          assert(amount <= baseIou.amount)
+
+          if (baseIou.amount > amount)
+            then
+              do 
+                (restCid, offerSplit) <- exercise iouId Iou_Split with splitAmount = amount
+                offerTransfer <- exercise offerSplit Iou_Transfer with newOwner = painter
+                quoteIouCid <- exercise offerTransfer IouTransfer_Accept
+                success <- create MustPaint with owner = houseOwner; painter; iouId = quoteIouCid; job
+                archive offerId
+                return (success)
+            else 
+              do 
+                offerTransfer <- exercise iouId Iou_Transfer with newOwner = painter
+                quoteIouCid <- exercise offerTransfer IouTransfer_Accept
+                success <- create MustPaint with owner = houseOwner; painter; iouId = quoteIouCid; job
+                archive offerId
+                return (success)           
+
+      RejectOffer : ()
+        do return ()    
+
+
+template MustPaint
+  with
+    painter : Party
+    owner : Party
+    iouId : ContractId Iou
+    job : Text
+
+  where
+    signatory painter
+    observer owner
+    agreement
+      show painter <> " must work for " <>
+      show owner <> " to paint the " <> show job 
+      <> " after the IOU is transferred."
+
+    controller painter can
+      nonconsuming Outsource : ContractId ProposeOutsource
+        with
+          outsourcer : Party
+          outsourceAmount : Decimal
+          outsourceCurrency : Text
+        do 
+          iou <- fetch iouId
+          assert(painter == iou.owner && outsourceCurrency == iou.currency)
+          assert(outsourceAmount < iou.amount)
+
+          iouId <- exercise iouId Iou_AddObserver with newObserver = outsourcer
+
+          create ProposeOutsource with
+            contractor = painter
+            outsourcer
+            outsourceAmount
+            outsourceCurrency
+            iouId
+            job
+
+
+template ProposeOutsource
+  with 
+    contractor : Party
+    outsourcer : Party
+    outsourceAmount : Decimal
+    outsourceCurrency : Text
+    iouId : ContractId Iou
+    job : Text
+  
+  where
+    signatory contractor
+    ensure
+      outsourceAmount > 0.0
+
+    controller outsourcer can
+      Accept : ContractId MustPaint
+        do
+          (restCid, offerSplit) <- exercise iouId Iou_Split with splitAmount = outsourceAmount
+          offerTransfer <- exercise offerSplit Iou_Transfer with newOwner = outsourcer
+          success <- exercise offerTransfer IouTransfer_Accept
+          create MustPaint with painter = outsourcer; owner = contractor; iouId = restCid; job

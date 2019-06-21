@@ -1,0 +1,47 @@
+-- Copyright (c) 2019 Digital Asset (Switzerland) GmbH and/or its affiliates. All rights reserved.
+-- SPDX-License-Identifier: Apache-2.0
+
+daml 1.2
+module Main where
+
+import DA.Time
+import DA.Date
+
+import Iou
+import Insurance
+
+
+setup = scenario do
+  alice <- getParty "Alice"
+  doctor <- getParty "Doctor"
+  insurer <- getParty "Insurer"
+  usBank <- getParty "USD_Bank"
+
+  let 
+    my_date = date 2019 Jun 01
+    my_time = time my_date 00 00 00
+
+  -- Banks issue Iou transfers
+  iouTransferAliceCid <- submit usBank do
+    iouCid <- create Iou with
+      issuer = usBank
+      owner = usBank
+      currency = "USD"
+      amount = 12400.5
+      observers = []
+    exercise iouCid Iou_Transfer with newOwner = alice
+
+  iouTransferBobCid <- submit usBank do
+    iouCid <- create Iou with
+      issuer = usBank
+      owner = usBank
+      currency = "USD"
+      amount = 10000.0
+      observers = []
+    exercise iouCid Iou_Transfer with newOwner = insurer
+
+  -- Doctor, Insurer and Alice accept
+  submit alice do
+    exercise iouTransferAliceCid IouTransfer_Accept
+  submit insurer do
+    exercise iouTransferBobCid IouTransfer_Accept

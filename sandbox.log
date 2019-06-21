@@ -1,0 +1,137 @@
+14:18:12.834 [sandbox-akka.actor.default-dispatcher-11] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+14:18:13.316 [sandbox-akka.actor.default-dispatcher-11] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+14:18:14.394 [sandbox-akka.actor.default-dispatcher-11] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+14:18:14.429 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.0 with ledger-id = sandbox-53895857-b0d5-418d-99e3-0b57959e87e3, port = 6865, dar file = DamlPackageContainer(List(test\daml\painter.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+14:22:07.707 [sandbox-akka.actor.default-dispatcher-10] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+14:22:09.029 [sandbox-akka.actor.default-dispatcher-10] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+14:34:00.721 [sandbox-akka.actor.default-dispatcher-12] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+14:34:01.498 [sandbox-akka.actor.default-dispatcher-12] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+14:42:00.856 [sandbox-akka.actor.default-dispatcher-3] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+14:42:01.380 [sandbox-akka.actor.default-dispatcher-3] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+14:42:02.182 [sandbox-akka.actor.default-dispatcher-3] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+14:42:02.333 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.0 with ledger-id = sandbox-c3425287-18ec-44b9-b7a9-0a311be25cc6, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+14:43:52.750 [sandbox-akka.actor.default-dispatcher-17] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command 8af26af4529e4acd has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: dependency error: couldn't find contract AbsoluteContractId(#2:1). Details: N/A.
+14:45:25.739 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+14:45:25.771 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+14:46:16.878 [sandbox-akka.actor.default-dispatcher-2] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+14:46:17.312 [sandbox-akka.actor.default-dispatcher-2] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+14:46:18.067 [sandbox-akka.actor.default-dispatcher-2] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+14:46:18.090 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.0 with ledger-id = sandbox-6aaa263b-1e42-45ba-8c07-6727163c99c4, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+14:54:56.990 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+14:54:57.068 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+14:55:52.957 [sandbox-akka.actor.default-dispatcher-6] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+14:55:53.525 [sandbox-akka.actor.default-dispatcher-6] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+14:55:54.294 [sandbox-akka.actor.default-dispatcher-6] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+14:55:54.390 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.0 with ledger-id = sandbox-66907a9c-e3b9-4e41-9b57-0fbd7bc280e6, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+15:14:08.157 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+15:14:08.220 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+18:51:01.428 [sandbox-akka.actor.default-dispatcher-4] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+18:51:01.820 [sandbox-akka.actor.default-dispatcher-4] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+18:51:02.586 [sandbox-akka.actor.default-dispatcher-4] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+18:51:02.613 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.0 with ledger-id = sandbox-a5c7f8e5-ee22-458f-aee1-88522a664633, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+19:01:23.440 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+19:01:23.481 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+11:43:15.242 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+11:43:15.638 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+11:43:16.354 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+11:43:16.390 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-db569c67-395a-440a-ac05-473e8c4ff110, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+11:46:09.390 [sandbox-akka.actor.default-dispatcher-21] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command b27c0af34ac32444 has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: The following errors occured: node NodeId(0) (Identifier(f76c9f7e97b9d4e1a3580362af2add5dd5393b0aee196d6cfb889b006cac04a8,Insurance:Policy)) requires authorizers USD_Bank,Bob,Alice, but only Alice were given. Details: N/A.
+11:47:14.090 [sandbox-akka.actor.default-dispatcher-14] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command d7e0a02c90140e86 has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: The following errors occured: node NodeId(0) (Identifier(f76c9f7e97b9d4e1a3580362af2add5dd5393b0aee196d6cfb889b006cac04a8,Insurance:Policy)) requires authorizers USD_Bank,Alice,Bob, but only Bob were given. Details: N/A.
+11:52:29.236 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+11:52:29.258 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+11:53:13.925 [sandbox-akka.actor.default-dispatcher-5] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+11:53:14.336 [sandbox-akka.actor.default-dispatcher-5] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+11:53:14.976 [sandbox-akka.actor.default-dispatcher-5] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+11:53:15.002 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-41dd303e-92d5-42ea-a3c2-c5d5d0df0506, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+11:54:12.719 [sandbox-akka.actor.default-dispatcher-8] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command 98528b0f79378f99 has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: The following errors occured: node NodeId(0) (Identifier(5d7b7c87e9138bade0f94ebb4f3ca6eb5337d2595547b11f01350f1663d4741b,Insurance:Policy)) requires authorizers Insurer,Doctor,Alice, but only Alice were given. Details: N/A.
+12:55:42.809 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+12:55:42.828 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+13:00:58.462 [sandbox-akka.actor.default-dispatcher-8] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+13:00:58.839 [sandbox-akka.actor.default-dispatcher-8] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+13:00:59.576 [sandbox-akka.actor.default-dispatcher-8] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+13:00:59.598 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-408e5259-ca2e-45e1-968b-036f416e1c71, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+13:02:31.649 [sandbox-akka.actor.default-dispatcher-15] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command 1f746700f7bbcda4 has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: Interpretation error: Error: User abort: Assertion failed. Details: Last location: [DA.Internal.Assert:19], partial transaction: <empty transaction>.
+13:02:43.668 [sandbox-akka.actor.default-dispatcher-15] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command 622fd85623bd33de has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: The following errors occured: node NodeId(1) (Identifier(75a0491b9feab486a3ac6efa37306c5e12cbbad27cc409965d305acbf35e573d,Insurance:Invoice)) requires authorizers Doctor,Insurer, but only Doctor,Alice were given;node NodeId(2) (Identifier(75a0491b9feab486a3ac6efa37306c5e12cbbad27cc409965d305acbf35e573d,Insurance:Invoice)) requires authorizers Insurer,Alice, but only Doctor,Alice were given. Details: N/A.
+13:04:17.340 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+13:04:17.366 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+13:04:53.990 [sandbox-akka.actor.default-dispatcher-3] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+13:04:54.351 [sandbox-akka.actor.default-dispatcher-3] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+13:04:54.903 [sandbox-akka.actor.default-dispatcher-3] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+13:04:54.936 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-e1aba55d-e498-4267-9b9c-9327dd3410ae, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+13:06:10.343 [sandbox-akka.actor.default-dispatcher-10] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command 326d5145c85a0c1d has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: The following errors occured: node NodeId(1) (Identifier(9f7b3b0c13a3d462d2c04bd03855f4c3751d2d46887b3a58774a9375b9b5607f,Insurance:Invoice)) requires authorizers Doctor,Insurer, but only Doctor,Alice were given;node NodeId(2) (Identifier(9f7b3b0c13a3d462d2c04bd03855f4c3751d2d46887b3a58774a9375b9b5607f,Insurance:Invoice)) requires authorizers Insurer,Alice, but only Doctor,Alice were given. Details: N/A.
+13:15:17.980 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+13:15:18.020 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+13:15:49.014 [sandbox-akka.actor.default-dispatcher-2] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+13:15:49.379 [sandbox-akka.actor.default-dispatcher-2] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+13:15:49.921 [sandbox-akka.actor.default-dispatcher-2] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+13:15:49.957 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-d1fc15fe-7939-4b80-9a74-608165526af6, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+13:16:31.840 [sandbox-akka.actor.default-dispatcher-10] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command e7a6a869375a203b has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: The following errors occured: node NodeId(0) (Identifier(9238117f966fe721a9cfbfd8f32d9224152edbcbad26effc84a5cf93ddc2bd7d,Insurance:Policy)) requires authorizers Doctor,Alice,Insurer, but only Alice were given. Details: N/A.
+13:23:27.108 [sandbox-akka.actor.default-dispatcher-15] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command 5f06277296a572d8 has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: The following errors occured: node NodeId(0) (Identifier(9238117f966fe721a9cfbfd8f32d9224152edbcbad26effc84a5cf93ddc2bd7d,Insurance:Policy)) requires authorizers Doctor,Alice,Insurer, but only Insurer were given. Details: N/A.
+13:39:39.843 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+13:39:39.879 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+13:41:43.281 [sandbox-akka.actor.default-dispatcher-2] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+13:41:43.713 [sandbox-akka.actor.default-dispatcher-2] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+13:41:44.458 [sandbox-akka.actor.default-dispatcher-2] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+13:41:44.489 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-5ebf904e-0f16-4f7a-a368-e92dc3d3708c, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+13:42:47.573 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+13:42:47.581 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+13:44:15.148 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+13:44:15.580 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+13:44:16.274 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+13:44:16.313 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-55e8ec7c-01dd-4d24-91ab-c46c11f16d89, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+13:47:37.431 [sandbox-akka.actor.default-dispatcher-26] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command 3bed830af8f387a9 has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: Interpretation error: Error: User abort: Assertion failed. Details: Last location: [DA.Internal.Assert:19], partial transaction: <empty transaction>.
+13:47:56.114 [sandbox-akka.actor.default-dispatcher-26] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command f4bafed6005c4e21 has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: Interpretation error: Error: User abort: Assertion failed. Details: Last location: [DA.Internal.Assert:19], partial transaction: <empty transaction>.
+13:51:27.305 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+13:51:27.309 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+13:52:27.064 [sandbox-akka.actor.default-dispatcher-5] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+13:52:27.392 [sandbox-akka.actor.default-dispatcher-5] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+13:52:28.073 [sandbox-akka.actor.default-dispatcher-5] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+13:52:28.106 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-3cbe1769-1249-45f6-bdb0-7c95141ff822, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+18:03:24.759 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+18:03:24.784 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+18:04:11.588 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+18:04:12.040 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+18:04:12.888 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+18:04:13.082 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-035de90d-0555-4a9b-ae91-f1f9817bb93a, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+18:11:51.974 [sandbox-grpc-eventloop-29c504a1-5b5e-4274-bdb2-9a4414349dc6-1-2] WARN  c.d.l.a.v.t.t.TimeServiceGrpc$TimeService$ - Failed to set time for request [SetTimeRequest(sandbox-035de90d-0555-4a9b-ae91-f1f9817bb93a,Some(Timestamp(1562025600,0)),Some(Timestamp(1560816000,0))), INVALID_ARGUMENT: new_time [2019-06-18T00:00:00Z] is before current_time [2019-07-02T00:00:00Z]. Setting time backwards is not allowed.]: {} 
+18:12:51.121 [sandbox-akka.actor.default-dispatcher-49] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command 4c323815cc587c06 has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: Interpretation error: Error: User abort: Assertion failed. Details: Last location: [DA.Internal.Assert:19], partial transaction: <empty transaction>.
+11:32:53.848 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+11:32:53.887 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+11:52:15.037 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+11:52:15.495 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+11:52:16.678 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+11:52:16.710 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-ebbae822-3c7b-47f2-a7d8-e23e954acc38, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+11:55:56.397 [sandbox-akka.actor.default-dispatcher-19] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command 22a5216879684a6e has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: The following errors occured: node NodeId(7) (Identifier(ed345eaa2cef77ad686440a8c93e57fda83ff3fac8e9208f11face3fc207665d,Iou:IouTransfer)) requires authorizers David, but only Andrew were given;node NodeId(9) (Identifier(ed345eaa2cef77ad686440a8c93e57fda83ff3fac8e9208f11face3fc207665d,Outsource:MustPaint)) requires authorizers David, but only Andrew were given. Details: N/A.
+12:11:31.101 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+12:11:31.131 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+12:12:00.496 [sandbox-akka.actor.default-dispatcher-7] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+12:12:00.840 [sandbox-akka.actor.default-dispatcher-7] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+12:12:01.503 [sandbox-akka.actor.default-dispatcher-7] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+12:12:01.534 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-688d5395-48a0-4cbd-a464-b45a130cf355, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+12:16:43.298 [sandbox-akka.actor.default-dispatcher-34] WARN  c.d.p.s.s.ApiSubmissionService - Submission of command f0637a397a258475 has failed. 
+com.digitalasset.platform.server.api.ApiException: INVALID_ARGUMENT: Command interpretation error in LF-DAMLe: dependency error: couldn't find contract AbsoluteContractId(#7:8). Details: N/A.
+12:19:57.713 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+12:19:57.742 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+12:20:39.467 [sandbox-akka.actor.default-dispatcher-3] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+12:20:39.869 [sandbox-akka.actor.default-dispatcher-3] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+12:20:40.578 [sandbox-akka.actor.default-dispatcher-3] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+12:20:40.600 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-4f09092b-2493-40ab-a253-0a0c1d45ecc4, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+12:50:05.202 [Thread-3] INFO  c.d.p.s.s.command.ApiCommandService - Shutting down Command Service 
+12:50:05.470 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+12:50:39.782 [sandbox-akka.actor.default-dispatcher-10] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+12:50:40.390 [sandbox-akka.actor.default-dispatcher-10] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+12:50:41.247 [sandbox-akka.actor.default-dispatcher-10] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+12:50:41.279 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.13.5 with ledger-id = sandbox-a23a6c69-240b-448f-9fbc-69373a0d2215, port = 6865, dar file = DamlPackageContainer(List(dist\CSIRO.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 

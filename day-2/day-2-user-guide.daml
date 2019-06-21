@@ -1,0 +1,88 @@
+daml 1.2
+module _ModuleName_ where 
+
+type _TypeName_ = ContractId _TemplateName_ -- make a type synonym for neater code
+-- e.g. type IntTuple = (Int, Int)
+
+-- starting a smart contract
+template _TemplateName_
+
+	with -- input name and initialise the types
+		party1 : type -- type can be Int, Decimal, Text, Bool, Party, Date, Time, RelTime
+		party2 : type
+		party3 : type
+    someText : type...
+
+	where -- conditions for the contract
+    signatory [party1, party2] -- people that needs to all agree before this contract can be executed
+    observer [party3] -- people who's not involved, but should have knowledge of the execution
+    ensure
+      -- make sure condition is satisfied
+      -- contains a boolean expression that must evaluate to true for the contract to be carried out
+      -- usually about the inputs (e.g. validity check)
+    agreement show var1 <> "has obligation to" <>
+              show var2 <> "to doing something off-ledger (in real-life)"
+      -- <> concatinate the strings
+      -- show var1 prints content of var1 as a string
+
+    controller party1 can
+      _Action1_ : () -- return type, if there's no return, put ()
+                     -- to return the contract ID of a contract created, use: ContractId _TemplateName_
+        with
+          input1 : type
+          input2 : type
+
+        do
+          -- execution of the action
+          label1 <- updateExpression -- use <- when binding labels to updateExprestions
+          -- this includes create, exercise, fetch, abort, assert etc
+
+          let label2 = value -- use "Let" when binding label to values or function definitions
+              function (x : type) = 2 * x
+
+          input1 === label1.input -- check pre-conditions using ===
+
+          archive _ContractId_ -- consume a block
+
+          -- most common updateExpressions:
+          create _NameOfTemplate_ with example1; example2 = value 
+            -- ; separates input if not written in a block (like example below)
+            -- returns a unique identifyer of type ContractId _NameOfTemplate_
+
+          create this with example1; example2
+          -- "this" can refer to the contract, not the contractId.
+          -- shorthand for creating a same type of contract, no need to explicitly name the template again 
+          
+          exercise _ContractId_ _ChoiceOnContract_ with 
+            choiceArgument1 = value1
+            choiceArgument2...
+          -- also returns a unique identifyer of type ContractId _NameOfTemplate_
+
+          fetch _ContractId_
+          -- fetches the instance of a contract without consuming it
+          -- usually used to check if further conditions are met
+
+          abort errorMessage
+          -- fails the transaction, could also use assert(False)
+
+          assert(condition == True)
+          -- unlike ===, this checks if input passed into _Action1_ satisfy some conditions
+
+
+
+
+          
+
+          
+
+
+
+
+
+
+
+  
+
+    
+    
+    

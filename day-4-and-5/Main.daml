@@ -1,0 +1,42 @@
+-- Copyright (c) 2019 Digital Asset (Switzerland) GmbH and/or its affiliates. All rights reserved.
+-- SPDX-License-Identifier: Apache-2.0
+
+daml 1.2
+module Main where
+
+import Iou
+import Outsource
+
+setup = scenario do
+  andrew <- getParty "Andrew"
+  eugenie <- getParty "Eugenie"
+  francis <- getParty "Francis"
+  genevieve <- getParty "Genevieve"
+
+  usBank <- getParty "USD_Bank"
+
+  -- Banks issue Iou transfers
+  iouTransferEugenieCid <- submit usBank do
+    iouCid <- create Iou with
+      issuer = usBank
+      owner = usBank
+      currency = "USD"
+      amount = 12400.5
+      observers = []
+    exercise iouCid Iou_Transfer with newOwner = eugenie
+
+  iouTransferGenevieveCid <- submit usBank do
+    iouCid <- create Iou with
+      issuer = usBank
+      owner = usBank
+      currency = "USD"
+      amount = 10000.0
+      observers = []
+    exercise iouCid Iou_Transfer with newOwner = genevieve
+
+  -- Doctor, Insurer and Alice accept
+  submit eugenie do
+    exercise iouTransferEugenieCid IouTransfer_Accept
+  submit genevieve do
+    exercise iouTransferGenevieveCid IouTransfer_Accept
+

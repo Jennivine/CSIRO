@@ -1,0 +1,109 @@
+daml 1.2
+module Insurance where
+
+import DA.Time
+import Iou
+
+-- next step: incorporate IOU to make this an actual smart contract?
+template ProposePolicy
+  with
+    contract : Policy
+
+  where
+    signatory contract.patient
+    observer contract.doctor
+
+    ensure 
+      contract.deductible > 0.0 && contract.coverAmount > 0.0
+
+    controller contract.insurer can
+      Finalise : ()
+        do 
+          create contract
+          return ()
+
+template Policy
+  with
+    doctor : Party
+    patient : Party
+    insurer : Party
+    deductible : Decimal
+    coverAmount : Decimal
+    coverFeeNext : Time
+
+  where
+    signatory [patient, insurer]
+    agreement
+      show doctor <> " must treat " <>
+      show patient <> " whenever requested."
+
+    ensure 
+      deductible > 0.0 && coverAmount > 0.0
+
+    controller insurer can
+      InvoiceFee : ContractId Policy
+        do 
+          after coverFeeNext
+          create Invoice with
+            payer = patient
+            receiver = insurer
+            amount = coverAmount
+          create this with
+            coverFeeNext = addRelTime coverFeeNext (days 30)
+
+    controller doctor can
+      nonconsuming InvoiceTreatment : ()
+        with
+          amount : Decimal
+        do
+          create Invoice with
+            payer = insurer
+            receiver = doctor
+            amount
+          create Invoice with
+            payer = patient
+            receiver = insurer
+            amount = min amount deductible  
+          return ()      
+
+template Invoice
+  with 
+    payer : Party
+    receiver : Party
+    amount : Decimal
+  
+  where
+    ensure amount > 0.0
+    signatory payer, receiver
+    agreement
+      show payer <> " has to pay " <>
+      show amount <> " to " <> show receiver <> "."
+
+    controller payer can
+      PayFee : ContractId Iou
+        with 
+          iouId : ContractId Iou
+
+        do
+        -- transfer IOU from payer to receiver
+          baseIou <- fetch iouId
+          assert(payer == baseIou.owner)
+          assert(amount <= baseIou.amount)
+
+          if (baseIou.amount > amount)
+            then
+              do 
+                offerSplit <- exercise iouId Iou_Split with splitAmount = amount
+                offerTransfer <- exercise offerSplit Iou_Transfer with newOwner = receiver
+                success <- exercise offerTransfer IouTransfer_Accept
+                return (success)
+            else 
+              do 
+                offerTransfer <- exercise iouId Iou_Transfer with newOwner = receiver
+                success <- exercise offerTransfer IouTransfer_Accept
+                return (success)          
+
+after : Time -> Update()
+after time = do
+  now <- getTime
+  assert(time < now)
