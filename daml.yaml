@@ -4,7 +4,7 @@ name: CSIRO
 
 version: 1.0.0
 
-source: C:\Users\jche176171\CSIRO\day-4-and-5\Main.daml
+source: C:<path>\Main.daml
 
 scenario: Main:setup
 
