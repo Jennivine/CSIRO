@@ -1,6 +1,6 @@
 # CSIRO
 
-This folder contains all my code writting during a week of work experience at CSIRO Data61.
+This folder contains all my code written during a week of work experience at CSIRO Data61.
 
 It uses a programming language called daml, which has its documentations at:
 https://docs.daml.com/index.html
