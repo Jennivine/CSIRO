@@ -1,4 +1,4 @@
-# CSIRO
+# CSIRO Data61: DAML instruction
 
 This folder contains all my code written during a week of work experience at CSIRO Data61.
 
